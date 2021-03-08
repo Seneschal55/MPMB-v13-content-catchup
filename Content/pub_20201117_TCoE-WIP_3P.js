@@ -113,6 +113,41 @@ AddSubClass("barbarian", "path of the beast", {
 			source : ["TCoE", 24],
 			minlevel : 3,
 			description : "\n   Whenever I enter my rage, I can transform using an option from the Form of the Beast table (see Notes page)",
+			weaponOptions : [{
+				regExpSearch : /^(?=.*(bestial|beast))(?=.*bite).*$/i,
+				name : "Bestial Bite",
+				source : [["TCoE", 24]],
+				ability : 1,
+				type : "Natural",
+				damage : [1, 8, "piercing"],
+				range : "Melee",
+				description : "Only in rage; On a hit once on my turn, regain Prof Bonus in HP",
+				abilitytodamage : true,
+				bestialNaturalWeapon : true
+			}, {
+				regExpSearch : /^(?=.*(bestial|beast))(?=.*claws?).*$/i,
+				name : "Bestial Claws",
+				source : [["TCoE", 24]],
+				ability : 1,
+				type : "Natural",
+				damage : [1, 6, "slashing"],
+				range : "Melee",
+				description : "Only in rage; Extra attack as part of Attack action",
+				abilitytodamage : true,
+				bestialNaturalWeapon : true
+			}, {
+				regExpSearch : /^(?=.*(bestial|beast))(?=.*tail).*$/i,
+				name : "Bestial Tail",
+				source : [["TCoE", 24]],
+				ability : 1,
+				type : "Natural",
+				damage : [1, 8, "piercing"],
+				range : "Melee",
+				description : "Reach; Only in rage",
+				abilitytodamage : true,
+				bestialNaturalWeapon : true
+			}],
+			weaponsAdd : ["Bestial Bite", "Bestial Claws", "Bestial Tail"],
 			toNotesPage : [{
 				name : "Form of the Beast Table",
 				source : ["TCoE", 24],
